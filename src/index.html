@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon Go</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+
+  <body>
+    <!-- Barra navegadora de la página-->
+  <header class="barra">
+     <div class= "logos">
+      <img src="images/pokemon.png" id = "pokemonLogo"/>
+      <img src="images/go.png" id = "goLogo"/>
+    </div>
+      <img src="images/ash.png" id = "ash"/>
+
+      <div class = "searchBox">
+        <div class="searchSubmit">
+        <input type = "text" id="search" placeholder="Search only by name" />
+        <input type = "submit" id= "searchSubmit" value = "&#128269;"/>
+        </div>
+        <div class = "bottoms">
+        <div class= "labelOrder">
+        <select id="order">
+         <option selected disabled>Order</option>
+         <option>A-Z</option>
+         <option>Z-A</option>
+         <option>#Pokedex</option>
+         <option>#Pokedex Inverse</option>
+        </select>
+       </div>
+        <div class= "labelFilters">
+         <label>Filters</label>
+         <div class= "selectsFilters">
+          <select id="region">
+           <option selected disabled>Region</option>
+           <option>Kanto</option>
+           <option>Johto</option>
+           <option>Show All</option>
+         </select>
+          <select id="type">
+           <option selected disabled>Type</option>
+           <option>Water</option>
+           <option>Fire</option>
+           <option>Grass</option>
+           <option>Poison</option>
+           <option>Flying</option>
+           <option>Bug</option>
+           <option>Normal</option>
+           <option>Electric</option>
+           <option>Ground</option>
+           <option>Fighting</option>
+           <option>Psychic</option>
+           <option>Rock</option>
+           <option>Ice</option>
+           <option>Ghost</option>
+           <option>Dragon</option>
+           <option>Fairy</option>
+           <option>Dark</option>
+           <option>Steel</option>
+           <option>Show All</option>
+         </select>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </header>
+
+  <main class = "mainContent">
+
+    <div id="pokemonDiv">
+    </div>
+
+  </main>
+    <!--<div id="root"></div>-->
+
+  <footer class = "footer">
+    <label class = "copyright">Pokémon Go &#169;</label>
+
+
+      <div class = "media"> <!--Buscar cómo convertirlos a hipervinculos-->
+        <div class = "followText">
+          <label>Follow Us</label>
+        </div>
+        <div class = "fb">
+          <img src="images/facebook.png"/>
+          <label>Facebook</label>
+        </div>
+
+        <div class = "yt">
+          <img src="images/youtube.png"/>
+          <label>YouTube</label>
+        </div>
+
+        <div class = "tw">
+          <img src="images/twitter.png"/>
+          <label>Twitter</label>
+        </div>
+      </div>
+
+  </footer>
+<script src="main.js" type="module"></script>
+</body>
+
+</html>
