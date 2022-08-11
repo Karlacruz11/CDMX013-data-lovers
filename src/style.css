@@ -80,7 +80,7 @@ html, body { /*caracteríticas generales del body del html*/
 }
 
 
-#lupa{
+#searchSubmit{
     margin-left: -30px;
     height: auto;
     background-color:#F3F4F6;
@@ -104,7 +104,11 @@ html, body { /*caracteríticas generales del body del html*/
     flex-direction: column;
 
 }
-
+.bottoms{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .selectsFilters{
   display: flex;
   flex-direction: row;
@@ -112,6 +116,28 @@ html, body { /*caracteríticas generales del body del html*/
 
 }
 
+.labelOrder{
+margin-top: 26px;
+}
+#order {
+  background-color:#F9D48B;
+  border: 3px solid;
+  border-color: #2C46B2;
+  border-radius: 15px;
+  color: #D12332;
+  font-size: 12px;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+}
+#order option {
+  background-color:#F9D48B;
+  color: #D12332;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
 #region{
   background-color:#F9D48B;
   border: 3px solid;
@@ -121,16 +147,15 @@ html, body { /*caracteríticas generales del body del html*/
   font-size: 12px;
   font-weight: bold;
   width: 40%;
+  cursor: pointer;
 }
 
 #region option {
   background-color:#F9D48B;
-  border: 3px solid;
-  border-color: #2C46B2;
-  border-radius: 0px 0px 15px 15px;
   color: #D12332;
   font-size: 12px;
   font-weight: bold;
+  text-align: center;
   width: 40%;
 }
 #type{
@@ -142,9 +167,16 @@ html, body { /*caracteríticas generales del body del html*/
   font-size: 12px;
   font-weight: bold;
   width: 40%;
+  cursor: pointer;
 }
-
-
+#type option{
+  background-color:#F9D48B;
+  color: #D12332;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  width: 40%;
+}
 
 
 .mainContent{
@@ -199,6 +231,20 @@ margin-top: -10px;
    margin-top: 8px;
 }
 
+.generationPokemon{
+  margin-bottom: 5px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #D12332;
+}
+
+.aboutPokemon{
+  padding: 20px;
+  margin: 10px;
+  background-color: rgba(107, 138, 238, 0.555);
+  border: 0px solid;
+  border-radius: 15px;
+}
 
 .footer{
   bottom: 0;
@@ -274,11 +320,3 @@ margin-top: -10px;
   width: 40%;
   height: 40%;
 }
-<<<<<<< Updated upstream
-=======
-
-/*#grid {
-  display: grid;
-  grid-template-columns: auto auto;
-}*/
->>>>>>> Stashed changes

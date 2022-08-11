@@ -12,10 +12,77 @@
 
 //Filtrado por nombre en buscador
     export const searchByName = (pokemonList, inputName) =>{
-      console.log(inputName);
       let searchName = pokemonList.filter(pokemon => pokemon.name === inputName.toLowerCase());
       return searchName;
     }
+
+//Función de ordenado A-Z
+    export const sortAZ = (condition, pokemonList) => {
+        function sortName(a,b){
+          if (condition === "A-Z"){
+            if (a.name < b.name){
+              return -1;
+            }
+            if (a.name > b.name){
+              return 1;
+            }
+          return 0;
+          }
+        }
+      let sortResult = pokemonList.sort(sortName);
+      return sortResult;
+     }
+
+//Función de ordenado Z-A
+    export const sortZA = (condition, pokemonList) => {
+        function sortName(a,b){
+           if (condition === "Z-A"){
+             if (a.name > b.name){
+               return -1;
+             }
+             if (a.name < b.name){
+               return 1;
+             }
+          return 0;
+          }
+        }
+      let sortResult = pokemonList.sort(sortName);
+      return sortResult;
+     }
+
+//Función de ordenado ascendente #pokedex
+    export const sortNum = (condition, pokemonList) => {
+      function sortNum(a,b){
+        if (condition === "#Pokedex"){
+          if (a.num < b.num){
+            return -1;
+          }
+          if (a.num > b.num){
+            return 1;
+          }
+        return 0;
+        }
+      }
+      let sortResult = pokemonList.sort(sortNum);
+      return sortResult;
+    }
+
+//Función de ordenado descendente #pokedex
+    export const sortNumInverse = (condition, pokemonList) => {
+        function sortNumPokedex(a,b){
+          if (condition === "#Pokedex Inverse"){
+            if (a.num > b.num){
+              return -1;
+            }
+            if (a.num < b.num){
+              return 1;
+            }
+          return 0;
+          }
+        }
+      let sortResult = pokemonList.sort(sortNumPokedex);
+      return sortResult;
+     }
 
  //Estas son otras opciones
 
@@ -51,4 +118,4 @@
   return filteredPokemon;
 }*/
 
-//export default data;
+//export default data
