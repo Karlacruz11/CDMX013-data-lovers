@@ -1,6 +1,6 @@
 import data from '../src/data/pokemon/pokemon.js';
 import dataMock from './mockData.js'
-import {filterByRegion, filterByType, searchByName, sortAZ, sortZA, sortNum, sortNumInverse} from '../src/data.js'; 
+import {filterByRegion, filterByType, searchByName, sortAZ, sortZA, sortNum, sortNumInverse, calculatorSTAB, calculatorDPS, calculatorEPS} from '../src/data.js'; 
 
 const orderNum = [
   {
@@ -194,6 +194,16 @@ const orderNameInvTwo = [
   }
 ];
 
+//const conditionOrder = "A-Z";
+const conditionOrderError = "C-D";
+
+const mockTypeDamage = 45;
+const mockTypeAttackType = "water";
+const mockTypePokemonType = "water";
+const mockTypePokemonTypeDiff = "fire";
+const mockTypeTime = 2.6;
+const mockTypeEnergy = -33;
+
 
 
 it('debería ser un objeto', () => {
@@ -284,44 +294,89 @@ test('debería ser una función', () => {
 
 describe('Corroborar funciones de ordenado alfabeticamente (A-Z/Z-A)',() =>{
 
-it('sortAZ debería ser una función', ()=> {
-  expect(typeof sortAZ).toBe('function');
-});
-
-it('sortAZ debería ordenar de A-Z', () => {
-  expect(sortAZ('A-Z', orderNameInv)).toEqual(orderName);
-});
-
-it('sortZA debería ser una función', () => {
-  expect(typeof sortZA).toBe('function');
-});
-
-it('sortZA debería ordenar de Z-A', () => {
-  expect(sortZA('Z-A', orderNameTwo)).toEqual(orderNameInvTwo);
-});
-
-it('sortAZ debería ser una función', ()=> {
-  expect(typeof sortNum).toBe('function');
-});
-
-it('sortNum debería ordenar por orden numérico ascendente',() => {
-  expect(sortNum('#Pokedex', orderNumInv)).toEqual(orderNum);
-});
-
-it('sortAZ debería ser una función', ()=> {
-  expect(typeof sortNumInverse).toBe('function');
-});
-
-it('sortNumInverse debería ordenar por orden numérico descendente',() => {
-  expect(sortNumInverse('#Pokedex Inverse', orderNumTwo)).toEqual(orderNumInvTwo);
-});
-
-});
-
-/*describe('Corroborar funciones de ordenado por #pokedex', () => {
-
-  it('sortNum debería ordenar por orden numérico ascendente',() => {
-    expect(sortNum('#Pokedex', orderName)).toEqual(orderName);
+  it('sortAZ debería ser una función', ()=> {
+    expect(typeof sortAZ).toBe('function');
   });
 
-})*/
+  it('sortAZ debería ordenar de A-Z', () => {
+    expect(sortAZ('A-Z', orderNameInv)).toEqual(orderName);
+  });
+
+  it('si no se cumple condición en sortAZ ordena al inverso', () => {
+    expect(sortAZ('A-Z', orderName)).toEqual(orderNameInv);
+  });
+
+
+
+  it('sortZA debería ser una función', () => {
+    expect(typeof sortZA).toBe('function');
+  });
+
+  it('sortZA debería ordenar de Z-A', () => {
+    expect(sortZA('Z-A', orderNameTwo)).toEqual(orderNameInvTwo);
+  });
+
+  it('si no se cumple condición en sortZA ordena al inverso', () => {
+    expect(sortZA('Z-A', orderNameInvTwo)).toEqual(orderNameTwo);
+  });
+
+  it('sortAZ debería ser una función', ()=> {
+    expect(typeof sortNum).toBe('function');
+  });
+
+  it('sortNum debería ordenar por orden numérico ascendente',() => {
+    expect(sortNum('#Pokedex', orderNumInv)).toEqual(orderNum);
+  });
+
+  it('si no se cumple la condición en sortNum ordena al inverso',() => {
+    expect(sortNum('#Pokedex', orderNumInv)).toEqual(orderNumInv);
+  });
+
+  it('sortAZ debería ser una función', ()=> {
+    expect(typeof sortNumInverse).toBe('function');
+  });
+
+  it('sortNumInverse debería ordenar por orden numérico descendente',() => {
+    expect(sortNumInverse('#Pokedex Inverse', orderNumTwo)).toEqual(orderNumInvTwo);
+  });
+
+  it('si no se cumple sortNumInverse debería ordenar al inverso',() => {
+    expect(sortNumInverse('#Pokedex Inverse', orderNumTwo)).toEqual(orderNumTwo);
+  });
+
+  /*it('si no se cumple condición #Pokedex Inverse, debería no ordenar', () => {
+    expect(sortNumInverse(conditionOrderError, orderNumTwo)).toEqual(orderNumTwo);
+  });*/
+
+});
+
+describe('Corroborar funciones cálculos estadísticos',() =>{
+  test('calculatorSTAB debería ser una función', () => {
+    expect(typeof calculatorSTAB).toBe('function');
+  });
+
+ test('debe retornar un stab de [54]',() =>{
+    expect(calculatorSTAB(mockTypeDamage, mockTypeAttackType, mockTypePokemonType)).toEqual(54);
+  });
+
+  test('debe retornar un stab === damage [45]', () =>{
+    expect(calculatorSTAB(mockTypeDamage, mockTypeAttackType, mockTypePokemonTypeDiff)).toEqual(45);
+  })
+
+  test('calculatorDPS debería ser una función', () => {
+    expect(typeof calculatorDPS).toBe('function');
+  });
+
+  test('debe retornar un DPS de 21', () => {
+    expect(calculatorDPS(mockTypeDamage, mockTypeAttackType, mockTypePokemonType, mockTypeTime)).toEqual(21);
+  })
+
+  test('calculatorEPS debería ser una función', () => {
+    expect(typeof calculatorEPS).toBe('function');
+  });
+
+  test('debe retornar un EPS de -13', () => {
+    expect(calculatorEPS(mockTypeEnergy, mockTypeTime)).toEqual(-13);
+  })
+
+});
