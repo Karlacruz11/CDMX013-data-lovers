@@ -25,7 +25,7 @@ const generatorHTML = (pokecontainer, pokemonList) => {
       const typePokemon = (typeEachPokemon) => {
         let eachTypeImg = "";
           typeEachPokemon.forEach((elementImg) => {
-            eachTypeImg += "<img src=images/types/types/"+elementImg+".png alt=type pokemon/>";
+            eachTypeImg += "<img src=./src/images/types/types/"+elementImg+".png alt=type pokemon/>";
           });
           return eachTypeImg;
         };
@@ -85,7 +85,7 @@ const generatorHTML = (pokecontainer, pokemonList) => {
         const typePokemon = (typeEachPokemon) => {
           let eachTypeImg = "";
           typeEachPokemon.forEach((elementImg) => {
-            eachTypeImg += "<img src=images/types/types/"+elementImg+".png alt=type pokemon/>";
+            eachTypeImg += "<img src=./src/images/types/types/"+elementImg+".png alt=type pokemon/>";
           });
           return eachTypeImg;
         };
@@ -96,8 +96,8 @@ const generatorHTML = (pokecontainer, pokemonList) => {
         pokemonTypeDiv.innerHTML = pokemonObject["type"] + "<br/>" + typePokemon(pokemonObject["type"]);
         pokemonGenerationDiv.innerHTML = pokemonObject["generation"]["num"].replace("ii", "2").replace(" i", " 1") + "<br/>"  +
                                           pokemonObject["generation"]["name"].replace("k", "K").replace("j", "J");
-        pokemonHeigthDiv.innerHTML = "<img src=images/height.png >" +" "+ pokemonObject["size"]["height"];
-        pokemonWeigthDiv.innerHTML = "<img src=images/weight.png >" +" "+ pokemonObject["size"]["weight"];
+        pokemonHeigthDiv.innerHTML = "<img src=./src/images/height.png >" +" "+ pokemonObject["size"]["height"];
+        pokemonWeigthDiv.innerHTML = "<img src=./src/images/weight.png >" +" "+ pokemonObject["size"]["weight"];
         pokemonAboutDiv.innerHTML = pokemonObject["about"];
         pokemonStatsDiv.innerHTML = "<span class=attacksTitle>Special Attacks</span>";
         pokemonAttackName.innerHTML = "<tr>"+"<th class=headerTable>Name</th>"+"<th class=headerTable>STAB</th>"+"<th class=headerTable>DPS</th>"+"<th class=headerTable>EPS</th>"+"</tr>";
