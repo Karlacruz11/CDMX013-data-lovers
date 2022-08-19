@@ -194,7 +194,7 @@ const generatorHTML = (pokecontainer, pokemonList) => {
 
       //añadir entre el texto del paragraph el input entre comillas del usuario que no fue encontrado;
       messageErrorText.innerHTML = "We found no matches for "  +"\" "+inputName+" \","+ "<br/>" + "try typing only the full name of a pokémon";
-      messageErrorGif.innerHTML = "<img src = images/error.gif >";
+      messageErrorGif.innerHTML = "<img src =./src/images/error.gif >";
 
       pokeMessageError.append(messageErrorText, messageErrorGif);
       pokecontainer.append(pokeMessageError);
