@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
 
-
+  <!--etiqueta que indica comienzo de contenido de la página-->
   <body>
     <!-- Barra navegadora de la página-->
-  <header class="barra">
+  <header class="navBar"> <!--Header etiqueta de sección de encabezado -->
      <div class= "logos">
       <img src="./src/images/pokemon.png" id = "pokemonLogo"/>
       <img src="./src/images/go.png" id = "goLogo"/>
@@ -18,22 +18,23 @@
 
       <div class = "searchBox">
         <div class="searchSubmit">
+        <!--etiqueta de input indica que se recibirá algo del usuario, especificando de qué tipo con type = ""-->
         <input type = "text" id="search" placeholder="Search only by name" />
         <input type = "submit" id= "searchSubmit" value = "&#128269;"/>
         </div>
-        <div class = "bottoms">
-        <div class= "labelOrder">
-        <select id="order">
-         <option selected disabled>Order</option>
-         <option>A-Z</option>
-         <option>Z-A</option>
-         <option>#Pokedex</option>
-         <option>#Pokedex Inverse</option>
-        </select>
-       </div>
         <div class= "labelFilters">
-         <label>Filters</label>
+          <!--Etiqueta que indica que sigue la agrupación de filtros -->
+         <label for = "filters" >Filters</label>
          <div class= "selectsFilters">
+          <!--etiqueta que indica que desplegará un menú de opciones-->
+            <select id="order">
+            <!--etiqueta que indica opciones a seleccionar-->
+             <option selected disabled>Order</option>
+             <option>A-Z</option>
+             <option>Z-A</option>
+             <option>#Pokedex</option>
+             <option>#Pokedex Inverse</option>
+            </select>
           <select id="region">
            <option selected disabled>Region</option>
            <option>Kanto</option>
@@ -62,26 +63,26 @@
            <option>Steel</option>
            <option>Show All</option>
          </select>
+         <!--etiqueta para botones-->
+        <button id= "clearButton">Clear</button>
         </div>
       </div>
-    </div>
     </div>
 
   </header>
 
+  <!--etiqueta que indica contenido principal del body-->
   <main class = "mainContent">
-
     <div id="pokemonDiv">
     </div>
-
   </main>
     <!--<div id="root"></div>-->
 
+  <!--etiqueta que indica pie de página-->
   <footer class = "footer">
     <label class = "copyright">Pokémon Go &#169;</label>
 
-
-      <div class = "media"> <!--Buscar cómo convertirlos a hipervinculos-->
+      <div class = "media">
         <div class = "followText">
           <label>Follow Us</label>
         </div>
